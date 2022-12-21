@@ -1,0 +1,50 @@
+package week05_10_08_2022;
+
+import java.util.Scanner;
+
+public class CalculatorWithSwitch {
+    //we will create a basic calculator which has +,-,/,*
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter first number");
+        double number1 = scanner.nextDouble();
+
+        System.out.println("Please enter second number");
+        double number2 = scanner.nextDouble();
+
+        System.out.println("Please enter your operator");
+        //scanner.next().charAt(0);
+        char operator = scanner.next().charAt(0);
+        //String operator = scanner.next()==> if we wanted to use without charAt() we will use "" instead of ''
+
+        //we don't have nextChar() method
+        // so we need to use our String methods which is charAt()
+        double result=0;
+
+
+        switch (operator) {
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '/':
+                result = number1 / number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            default:
+                System.out.println("operator is wrong");
+                break;
+        }
+        System.out.println(result);
+        scanner.close(); //but it is not mandatory
+
+
+
+
+    }
+}
