@@ -1,10 +1,14 @@
 package week13_12_03_2022.access_modifier.pac1;
 
 public class Person {
-
     public String name;
-    String LastName;
+    String lastName;
     private int id;
-    protected int age;
+    static protected int age;
+
+
+    public void getid() {
+        System.out.println(id);
+    }
 
 }

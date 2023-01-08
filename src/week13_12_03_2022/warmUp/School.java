@@ -1,4 +1,5 @@
 package week13_12_03_2022.warmUp;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class School {
     static ArrayList<Teacher> teachers = new ArrayList<>();
 
 
-    static {
+    static  {
 
         Teacher teacher1 = new Teacher("Muhtar", "Abc", 'M', LocalDate.of(1987, 1, 1), 1L);
         Teacher teacher2 = new Teacher("Gurhan", "Abc", 'M', LocalDate.of(1977, 1, 1), 2L);
@@ -35,6 +36,28 @@ public class School {
         ArrayList<Teacher> result = getTeachersNameStartWith("M");
 
         System.out.println(result);
+
+        ArrayList<Teacher> females = getTeachersByGender('F');
+        System.out.println(females);
+    }
+
+    private static ArrayList<Teacher> getTeachersByGender(char gender) {
+        ArrayList<Teacher> result = new ArrayList<>();
+
+        //need to get teachers one by one
+        for (Teacher teacher : teachers) {
+
+            //check the gender if it is female
+            if (teacher.gender == gender)
+
+                //put in result
+                result.add(teacher);
+
+        }
+
+        return result;
+
+
     }
 
     private static ArrayList<Teacher> getTeachersNameStartWith(String prefix) {
